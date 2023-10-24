@@ -1,0 +1,25 @@
+.seat-item {
+  display: flex;
+
+  list-style-type: none;
+  margin: 10px;
+}
+
+.button {
+  height: 25px;
+  width: 25px;
+  border: none;
+}
+
+.seat-unavailable {
+  background-color: #00000033;
+}
+
+.seat-available {
+  border: 1px solid green;
+  background-color: white;
+}
+
+.seat-selected {
+  background-color: green;
+}

@@ -1,0 +1,80 @@
+.app-container {
+  border: 2px black solid;
+  border-radius: 10px;
+  padding: 24px;
+  margin: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: 'Roboto';
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.my-seat-booking-container {
+  width: 70%;
+  border: 2px lightblue solid;
+  border-radius: 10px;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selection-layout-seat-keys-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.seat-keys-layout-container {
+  width: 15%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.seat-keys-text {
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0px;
+}
+
+.seat-keys-status-container {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.seat-icon {
+  height: 10px;
+  width: 10px;
+  margin-right: 10px;
+  border: 2px solid black;
+}
+
+.seat-status-text {
+  font-size: 12px;
+  margin: 0px;
+}
+
+.icon-unavailable {
+  background-color: #908181c2;
+}
+
+.icon-available {
+  background-color: white;
+}
+
+.icon-selected {
+  background-color: #00ff15e6;
+}

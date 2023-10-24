@@ -1,0 +1,15 @@
+.proceed-button-container {
+  margin-top: 20px;
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.proceed-button {
+  background-color: red;
+  border-radius: 5px;
+  color: #ffffff;
+  height: 40px;
+  width: 100px;
+  cursor: pointer;
+}

@@ -1,0 +1,24 @@
+.seating-layout-container {
+  border: 2px #000000 solid;
+  overflow-y: scroll;
+  padding: 24px;
+  width: 75%;
+}
+
+.seats-list-item-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.screen {
+  height: 40px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.screen-text {
+  text-align: center;
+  margin: 0px;
+}
