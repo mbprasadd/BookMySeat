@@ -2,8 +2,6 @@ import {Component} from 'react'
 
 import ProceedButton from '../ProceedButton'
 
-import Selection from '../Selection'
-
 import Seat from '../Seat'
 
 import './index.css'
@@ -331,9 +329,9 @@ class SeatingLayout extends Component {
     }))
   }
 
-  a = b => {
-    this.setState({seatsList: b})
-    localStorage.setItem('seatsData', JSON.stringify(b))
+  proceedSelectedSeats = seatsList => {
+    this.setState({seatsList})
+    localStorage.setItem('seatsData', JSON.stringify(seatsList))
   }
 
   render() {
@@ -354,14 +352,14 @@ class SeatingLayout extends Component {
     return (
       <div className="seating-layout-container">
         <h4
-          className="primium-seats-text"
-          style={{display: displayType == 'premium' ? '' : 'none'}}
+          className="premium-seats-text"
+          style={{display: displayType === 'premium' ? '' : 'none'}}
         >
-          Priemium Seats
+          Premium Seats
         </h4>
         <ul
           className="seats-list-item-container"
-          style={{display: displayType == 'premium' ? '' : 'none'}}
+          style={{display: displayType === 'premium' ? '' : 'none'}}
         >
           {premiumList.map(eachSeat => (
             <Seat
@@ -373,14 +371,14 @@ class SeatingLayout extends Component {
         </ul>
         <hr />
         <h4
-          className="standerd-seats-text"
-          style={{display: displayType == 'standard' ? '' : 'none'}}
+          className="standard-seats-text"
+          style={{display: displayType === 'standard' ? '' : 'none'}}
         >
-          Standered Seats
+          Standard Seats
         </h4>
         <ul
           className="seats-list-item-container"
-          style={{display: displayType == 'standard' ? '' : 'none'}}
+          style={{display: displayType === 'standard' ? '' : 'none'}}
         >
           {standardList.map(eachSeat => (
             <Seat
@@ -398,7 +396,10 @@ class SeatingLayout extends Component {
         />
         <p className="screen-text">screen</p>
 
-        <ProceedButton seatsList={seatsList} a={this.a} />
+        <ProceedButton
+          seatsList={seatsList}
+          proceedSelectedSeats={this.proceedSelectedSeats}
+        />
       </div>
     )
   }

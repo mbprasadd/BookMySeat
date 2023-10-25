@@ -19,7 +19,7 @@
   border-radius: 5px;
 }
 
-.no-of-seats-inout-container {
+.no-of-seats-input-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +35,7 @@
   margin-right: 10px;
 }
 
-.input {
+.no-of-tickets-select {
   text-align: center;
   font-family: 'Roboto';
   font-size: 20px;
@@ -43,4 +43,8 @@
   border: none;
   height: 20px;
   width: 40px;
+}
+
+.no-of-tickets-option {
+  border: none;
 }

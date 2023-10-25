@@ -1,16 +1,14 @@
-import {Component} from 'react'
 import './index.css'
 
 const ProceedButton = props => {
-  const {seatsList, a} = props
+  const {seatsList, proceedSelectedSeats} = props
   const onClickProceedButton = () => {
     seatsList.forEach(element => {
       if (element.isSelected) {
         element.isAvailable = false
       }
     })
-    let b = seatsList
-    a(b)
+    proceedSelectedSeats(seatsList)
   }
   return (
     <div className="proceed-button-container">

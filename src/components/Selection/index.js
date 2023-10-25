@@ -9,53 +9,74 @@ const ticketTypesList = [
   },
   {
     id: 2,
-    optionType: 'premiun',
+    optionType: 'premium',
   },
 ]
 
 let getTicketType = localStorage.getItem('TicketType')
-getTicketType = getTicketType ? getTicketType : 'standard'
-class Selection extends Component {
-  state = {ticketType: ticketTypesList[0].optionType, noOfTickets: 0}
+getTicketType = getTicketType ? getTicketType : ticketTypesList[0].optionType
 
-  onChangeOption = event => {
-    this.setState({ticketType: event.target.value})
+let noOfSeats = localStorage.getItem('NoOfTickets')
+noOfSeats = noOfSeats ? noOfSeats : 0
+
+class Selection extends Component {
+  state = {seatType: getTicketType, noOfTickets: noOfSeats}
+
+  onChangeSeatOption = event => {
+    this.setState({seatType: event.target.value})
     localStorage.setItem('TicketType', event.target.value)
     window.location.reload()
   }
 
   onChangeNoOfTickets = event => {
     this.setState({noOfTickets: event.target.value})
+    localStorage.setItem('NoOfTickets', event.target.value)
+    window.location.reload()
   }
 
   render() {
-    const {ticketType, noOfTickets} = this.state
+    const {seatType, noOfTickets} = this.state
 
     return (
       <div className="select-quantity-container">
         <select
           className="select"
-          onChange={this.onChangeOption}
-          value={getTicketType}
+          onChange={this.onChangeSeatOption}
+          value={seatType}
         >
-          <option key="standard" className="option" value="standard">
+          <option className="option" value="standard">
             standard
           </option>
-          <option key="premium" className="option" value="premium">
+          <option className="option" value="premium">
             premium
           </option>
-          {/* {ticketTypesList.map(eachOption => (
-                        <option key={eachOption.ticketType} className="option" value={ticketType}>{eachOption.optionType}</option>
-                    ))} */}
         </select>
-        <div className="no-of-seats-inout-container">
-          <p className="number-text">No oF Seats:</p>
-          <input
-            className="input"
-            type="number"
-            value={noOfTickets}
+        <div className="no-of-seats-input-container">
+          <p className="number-text">No Of Seats:</p>
+          <select
+            className="no-of-tickets-select"
             onChange={this.onChangeNoOfTickets}
-          />
+            value={noOfTickets}
+          >
+            <option className="no-of-tickets-option" value="1">
+              1
+            </option>
+            <option className="no-of-tickets-option" value="2">
+              2
+            </option>
+            <option className="no-of-tickets-option" value="3">
+              3
+            </option>
+            <option className="no-of-tickets-option" value="4">
+              4
+            </option>
+            <option className="no-of-tickets-option" value="5">
+              5
+            </option>
+            <option className="no-of-tickets-option" value="6">
+              6
+            </option>
+          </select>
         </div>
       </div>
     )

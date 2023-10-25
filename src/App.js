@@ -2,7 +2,6 @@ import {Component} from 'react'
 
 import Selection from './components/Selection'
 import SeatingLayout from './components/SeatingLayout'
-import ProceedButton from './components/ProceedButton'
 
 import './App.css'
 
@@ -19,11 +18,11 @@ class App extends Component {
               <h6 className="seat-keys-text">Keys to Seat Layout: </h6>
               <div className="seat-keys-status-container">
                 <div className="seat-icon icon-available"></div>
-                <p className="seat-status-text">Availabel</p>
+                <p className="seat-status-text">Available</p>
               </div>
               <div className="seat-keys-status-container">
                 <div className="seat-icon icon-unavailable"></div>
-                <p className="seat-status-text">Un Availabel</p>
+                <p className="seat-status-text">Un Available</p>
               </div>
               <div className="seat-keys-status-container">
                 <div className="seat-icon icon-selected"></div>

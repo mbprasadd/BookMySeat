@@ -26,8 +26,7 @@ const Seat = props => {
   return (
     <li className="seat-item">
       <button type="button" className={seatClass} onClick={onClickSeat}>
-        {' '}
-        S{' '}
+        S
       </button>
     </li>
   )
